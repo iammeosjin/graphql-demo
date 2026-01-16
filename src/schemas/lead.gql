@@ -1,0 +1,31 @@
+enum LeadService {
+  DELIVERY
+  PICK_UP
+  PAYMENT
+}
+
+type Lead {
+  id: ID!
+  name: String!
+  email: EmailAddress!
+  mobile: PhoneNumber!
+  postcode: String!
+  service: LeadService!
+}
+
+type Query {
+  lead(id: ID!): Lead
+  leads: [Lead!]!
+}
+
+input RegisterInput {
+  name: String!
+  email: EmailAddress!
+  mobile: PhoneNumber!
+  postcode: String!
+  service: LeadService!
+}
+
+type Mutation {
+  register(input: RegisterInput!): Boolean!
+}
