@@ -22,3 +22,4 @@ build/
 coverage/
 .nyc_output/
 *.lcov
+test_directives.sh
